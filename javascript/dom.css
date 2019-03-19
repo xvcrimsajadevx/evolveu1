@@ -1,0 +1,52 @@
+body {
+    background-color: beige;
+}
+
+h1 {
+    margin-bottom: 0px
+}
+
+hr
+{
+    margin-top: 5px;
+}
+button {
+    margin: 1px;
+    width: 100px;
+}
+
+.cardsBody {
+    width: 98%;
+    margin: auto;
+}
+
+.leftPanel {
+    display: inline-block;
+    width: 280px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    padding: 5px 0px;
+}
+
+.rightPanel {
+    display: inline;
+    border: 1px solid black;
+}
+
+
+.card {
+    width: 260;
+    background-color: lightgray;
+    margin: 3px auto;
+    padding: 20px 0px;
+}
+
+ol {
+    list-style-type: none;
+    padding: 1px;
+}
+
+li {
+    display: inline-block;
+}

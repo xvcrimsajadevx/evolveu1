@@ -1,0 +1,54 @@
+<script type="text/javascript">
+
+const people = [
+    {name: "Kiado", age: 31},
+    {name: "Frenniz", age: 8},
+    {name: "Meril", age: 20},
+    {name: "Taolfes", age: 22},
+    {name: "Sedrick", age: 19},
+]
+
+const totalAge = (a) => {
+    //console.log('I am in Age Total')
+    //console.log(a);
+    
+    let total = 0;
+    
+    for (i=0; i < a.length; i++){
+        total = total + a[i].age;
+    }
+    
+    return total;
+}
+
+const aveAge = (a) => {
+    //console.log('I am in Average Age');
+    //console.log(a);
+    
+    let b = totalAge(a);
+    
+    return b / a.length;
+}
+
+    function assertEquals(a,b) {
+    //console.log(a, b);
+    
+    if (a === b) {
+        console.log("Okay =>", a);
+        return true;
+    } else {
+        console.log("the two values are not the same:")
+        console.log("p1->", a);
+        console.log("p2->", b);
+        
+        return false;
+    }
+}
+
+console.log(people);
+console.log("Total Age:", totalAge(people));
+console.log("Average Age:", aveAge(people));
+    
+assertEquals(totalAge(people), 100);
+assertEquals(aveAge(people), 20);
+</script>

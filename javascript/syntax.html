@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script type="text/javascript">
+        //~Define Variables
+            var num = 57; //num is a number
+            var str = "This is a string"; //str is a string
+
+            //Start Boolean
+                var x = 6; var y = 6; var z = 9;
+
+                var boolean1 = (x==y);
+                console.log(boolean1);
+
+                var boolean2 = (x==z);
+                console.log(boolean2);
+            //End Boolean
+
+            var myArray = [23, "this is an array", boolean1, boolean2]; //This is an array
+            console.log(myArray);
+
+            var charObject = {firstName: "Kiado", lastName: "Reidrem", age:31, race: "Hylian", occupation: "Royal Knight"}; //This is an object
+            console.log(charObject);
+
+            var myVariable; //This variable is stated but undefined
+            console.log(myVariable);
+            
+        //~Sample if/else
+            if (x == y) {
+                console.log("x is equal to y");}
+            else if (x > y) {
+                console.log("x is greater than y");}
+            else {
+                console.log("x is less than y");};
+            
+            
+            if (x == z) {
+                console.log("x is equal to z");}
+            else if (x > z) {
+                console.log("x is greater than z");}
+            else {
+                console.log("x is less than z");};
+                    
+        //~Functions
+            //Parameters passed in the HTML 'addButton'
+                function myFunction() {
+                    var a = parseInt(firstNum.value);
+                    var b = parseInt(secondNum.value);
+                    
+                    var sum = addNumbers(a, b);
+                    
+                    function addNumbers(){
+                        return a + b;
+                    }
+                    document.getElementById("total").innerHTML = "The answer is: " + sum;
+                  };
+            
+            //Prompts user for their name, then returns a greeting and prints it to document
+                function getName() {
+                    var newName = prompt("What is your name?");
+                    
+                    var greeting = greetUser(newName);
+                    
+                    function greetUser(){
+                        return "Hello " + newName + "!";};
+
+                    document.getElementById("newGreeting").innerHTML = greeting;
+                };
+            
+        //~Arrays
+            function addCharStart() {
+                var newChar = prompt("What is your character's name?");
+                
+                charArray.unshift(newChar);
+                document.getElementById("charList").innerHTML = charArray;
+            }
+            
+            function addCharEnd() {
+                var newChar = prompt("What is your character's name?");
+                
+                charArray.push(newChar);
+                document.getElementById("charList").innerHTML = charArray;
+            }
+            
+            function editChar3() {
+                var newChar = prompt("What is your character's name?");
+                
+                charArray[2]=(newChar);
+                document.getElementById("charList").innerHTML = charArray;
+            }
+            
+        //~Loops
+            function listCharacters(){
+                var i;
+                var text="";
+                
+                for(i=0; i<charArray.length; i++){
+                    text += charArray[i] + "<br>";};
+                
+                document.getElementById("generatedList").innerHTML = text;
+            };
+            
+            function kiadoInfo(){
+                var i;
+                var text="";
+                
+                for (i in charObject) {
+                    text += charObject[i] + " ";};
+                
+                document.getElementById("generatedList").innerHTML = text;
+            };
+            
+            function gen10(){
+                var i = 1;
+                var text = "";
+                
+                while (i <= 10){
+                    text += "Printing number " + i + "...<br>";
+                    i++;};
+                
+                document.getElementById("generatedList").innerHTML = text;
+            };
+            
+            function askNames(){
+                var i = 0;
+                var text="";
+                
+                do {
+                    var name = prompt("Give me a name!");
+                    text += name + "<br>";
+                    i++;
+                }
+                while (i < 3);
+                
+                document.getElementById("generatedList").innerHTML = text;
+            };
+            
+            function listCharIndex(){
+                var i = 0;
+                var text="";
+                
+                charArray.forEach(listIndex);
+                
+                function listIndex(index, value){
+                    text += value + "__" + index + "<br>";};
+                
+                document.getElementById("generatedList").innerHTML = text;
+            };
+            
+        //~Objects
+            var newCharObject = {firstName: "Rickard", lastName: "Fawkes", age:47, race: "Shiekah/Hylian", occupation: "Royal Knight"}; //This is an object
+            console.log(newCharObject);
+            
+            function rSearch(){
+                var rickardKey = document.getElementById("rSelector").value;
+                console.log("Key Name:", rickardKey);
+                
+                var text = newCharObject[rickardKey];
+                console.log("Key Value:", text)
+                
+                document.getElementById("rickardInfo").innerHTML = text;
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h1>Functions: Parameters & Return</h1>
+        <h2>Input two numbers to add them:</h2>
+        <span>First Number: </span> <input type="text" id="firstNum"><br>
+        <span>Second Number: </span> <input type="text" id="secondNum"><br>
+        <button id="addButton" onclick="myFunction()">Click to Add!</button><br>
+        
+        <p id="total"></p><br>
+        
+        <button onclick="getName()">Click here!</button><br>
+        <h3 id="newGreeting"></h3><br>
+        
+        <h1>Modifying Arrays</h1>
+        <p id="charList"></p>
+        
+        <button onclick="addCharStart()">Add to Start!</button>
+        <button onclick="addCharEnd()">Add to End!</button>
+        <button onclick="editChar3()">Edit 3rd Character!</button>
+        
+        <h1>Looping</h1>
+        <button onclick="listCharacters()">Generate Character List</button>
+        <button onclick="kiadoInfo()">Kiado's Info</button>
+        <button onclick="gen10()">Numbers 1-10</button>
+        <button onclick="askNames()">Give me names!</button>
+        <button onclick="listCharIndex()">Characters by Index</button>
+        <p id="generatedList"></p>
+        
+        <h1>Objects</h1>
+        <h3>What about Rickard?</h3>
+        <p id="rickardInfo"> </p>
+        <Select id="rSelector">
+            <option value="firstName">First Name</option>
+            <option value="lastName">Last Name</option>
+            <option value="age">Age</option>
+            <option value="race">Race</option>
+            <option value="occupation">Occupation</option>
+        </Select>
+        <button onclick="rSearch()">Find Info!</button>
+        
+        
+        <script>
+        //~Arrays
+            var charArray = ["Kiado Reidrem", "Frenniz", "Dakarra Flint", "Rickard Fawkes"];
+            console.log(charArray);
+            
+            document.getElementById("charList").innerHTML = charArray;
+        </script>
+    </body>
+</html>

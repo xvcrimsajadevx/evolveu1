@@ -1,0 +1,58 @@
+/* Calculator CSS */
+.calcBody {
+    width: 163px;
+    height: 240px;
+    padding: 14px 8px;
+    border: 1px solid #e2a5a5;
+    background-color: #fffbf2;
+    border-radius: 9px;
+}
+
+.calcScreen {
+    width: 161px;
+    height: 50px;
+    border: 1px solid #92a8af;
+    background-color: #f4fdff;
+    border-radius: 6px;
+}
+
+.fullEquation {
+    color: #ccc;
+    font-size: 10px;
+    height: 12px;
+    border-bottom: 1px solid #ccc;
+    padding: 1px 3px;
+    text-align: right;
+}
+
+.mainScreen {
+    font-size: 34px;
+    text-align: right;
+    padding: 0px 3px;
+}
+
+
+.numButton, .funcButton {
+    display: inline-block;
+    border: 1px solid #bb8d8d;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 3px 0px;
+    border-radius: 6px;
+}
+
+.numButton {
+    width: 35px;
+    background-color: #e8dde8;
+}
+
+.funcButton {
+    width: 46px;
+    background-color: #d4ccd4;
+}
+
+.notActive {
+    background-color: #444;
+}
+

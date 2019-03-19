@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient(#43C6AC, #ffaef1);
+}
+
+.clientCard {
+    text-align: center;
+    width: 220;
+    background-color: white;
+    margin: 3px auto;
+    padding: 18px 0px;
+    border: 4px solid black;
+    border-radius: 10px;
+    box-shadow: 7px 7px 12px;
+    margin-bottom: 12px;
+}
+
+p {
+    margin-block-start: .7em;
+    margin-block-end: .7em;
+}
+

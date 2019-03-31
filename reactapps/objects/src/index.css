@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.fab {
+    font-size: 5em;
+    padding: 12px;
+    color:red;
+}
+
+.fa-wolf-pack-battalion {
+	-webkit-animation: fa-wolf-pack-battalion 3s linear infinite both;
+	        animation: fa-wolf-pack-battalion 3s linear infinite both;
+}
+
+@keyframes fa-wolf-pack-battalion {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.fa-phoenix-squadron {
+	-webkit-animation: fa-phoenix-squadron .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
+	        animation: fa-phoenix-squadron .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
+}
+
+@-webkit-keyframes fa-phoenix-squadron {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+@keyframes fa-phoenix-squadron {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
+.fa-studiovinari {
+	-webkit-animation: fa-studiovinari 2s ease-in-out infinite alternate-reverse both;
+	        animation: fa-studiovinari 2s ease-in-out infinite alternate-reverse both;
+}
+
+@-webkit-keyframes fa-studiovinari {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+@keyframes fa-studiovinari {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+
+.fa-gitkraken {
+	-webkit-animation: fa-gitkraken .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
+	        animation: fa-gitkraken .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
+}
+
+@-webkit-keyframes fa-gitkraken {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+}
+@keyframes fa-gitkraken {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+}

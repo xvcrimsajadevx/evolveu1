@@ -9,7 +9,7 @@ class Icons extends Component {
         <i class="fab fa-studiovinari"></i>
         <i class="fab fa-gitkraken"></i>
       </div>
-    );
+    )
   }
 }
 

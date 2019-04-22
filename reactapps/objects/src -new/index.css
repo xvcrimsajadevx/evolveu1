@@ -19,10 +19,6 @@ code {
     color:red;
 }
 
-.fabActive {
-  color: blue;
-}
-
 .fa-wolf-pack-battalion {
 	-webkit-animation: fa-wolf-pack-battalion 3s linear infinite both;
 	        animation: fa-wolf-pack-battalion 3s linear infinite both;

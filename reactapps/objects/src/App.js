@@ -1,15 +1,38 @@
 import React, { Component } from 'react';
-import Icons from './components/Icons'
+import WebIcons from './components/WebIcons';
+import MathComp from './components/MathComp';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      id: null,
+    }
+  }
+
+  onButtonClick = (event) => {
+    let eventId = event.target.id;
+
+    this.setState({ id: eventId });
+  }
+
+
   render() {
+    const buttonActive = this.state.id;
+
     return (
       <div className="App">
-        <Icons />
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <WebIcons
+            buttonClick = {this.onButtonClick}
+            iconState = {this.state.icons}
+          />
+
+          { buttonActive ? <h4>You clicked {this.state.id}</h4> : <img src={logo} className="App-logo" alt="logo" /> }
+          { (this.state.id === 'wolf') ? <MathComp /> : "" }
+          { (this.state.id === 'kraken') ? <img src={logo} className="App-logo" alt="logo" /> : "" }
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import WebIcons from './components/WebIcons';
 import MathComp from './components/MathComp';
 import AccountComp from './components/AccountComp';
-import AccountsController from './components/AccountsController';
+import AccountsController from './components/accounts/AccountsController';
 import logo from './logo.svg';
 import './App.css';
 

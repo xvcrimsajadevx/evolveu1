@@ -2,12 +2,12 @@ export const accounts = [
   {
     id: 1,
     accountName: "Checking Account",
-    accountBalance: 10,
+    accountBalance: 820,
   },
   {
     id: 2,
     accountName: "Savings Account",
-    accountBalance: 20,
+    accountBalance: 500,
   },
   {
     id: 3,

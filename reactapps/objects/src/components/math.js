@@ -3,31 +3,19 @@
 // }
 
 function sumAdd(a, b) {
-  a = Number(a);
-  b = Number(b);
-  var toBe = a + b;
-  return toBe;
+  return a + b;
 }
 
 function sumSub(a, b) {
-  a = Number(a);
-  b = Number(b);
-  var toBe = a - b;
-  return toBe;
+  return a - b;
 }
 
 function sumMult(a, b) {
-  a = Number(a);
-  b = Number(b);
-  var toBe = a * b;
-  return toBe;
+  return a * b;
 }
 
 function sumDiv(a, b) {
-  a = Number(a);
-  b = Number(b);
-  var toBe = a / b;
-  return toBe;
+  return a / b;
 }
 
 export default { sumAdd, sumSub, sumMult, sumDiv };

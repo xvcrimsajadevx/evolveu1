@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #282c34;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -14,13 +15,13 @@ code {
 }
 
 .fab {
-    font-size: 5em;
+    font-size: calc(2em + 5vw);
     padding: 12px;
-    color:red;
+    color: #888ade;
 }
 
 .fabActive {
-  color: blue;
+  color: #d03b3b;
 }
 
 .fa-wolf-pack-battalion {

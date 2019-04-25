@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import WebIcons from './components/WebIcons';
 import MathComp from './components/MathComp';
+import AccountComp from './components/AccountComp';
+import AccountsController from './components/AccountsController';
 import logo from './logo.svg';
 import './App.css';
+
 
 class App extends Component {
   constructor() {
@@ -15,24 +18,22 @@ class App extends Component {
   onButtonClick = (event) => {
     let eventId = event.target.id;
 
-    this.setState({ id: eventId });
+    (this.state.id === eventId) ? this.setState({ id: null }) : this.setState({ id: eventId });
   }
-
 
   render() {
     const buttonActive = this.state.id;
 
     return (
       <div className="App">
-        <header className="App-header">
           <WebIcons
-            buttonClick = {this.onButtonClick}
-            iconState = {this.state.icons}
+            buttonClick = { this.onButtonClick }
+            iconState = { buttonActive }
           />
-
-          { buttonActive ? <h4>You clicked {this.state.id}</h4> : <img src={logo} className="App-logo" alt="logo" /> }
+          { buttonActive ? "" : <img src={ logo } className="App-logo" alt="logo" /> }
           { (this.state.id === 'wolf') ? <MathComp /> : "" }
-          { (this.state.id === 'kraken') ? <img src={logo} className="App-logo" alt="logo" /> : "" }
+          { (this.state.id === 'phoenix') ? <AccountComp /> : "" }
+          { (this.state.id === 'faerie') ? <AccountsController /> : "" }
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -44,7 +45,6 @@ class App extends Component {
           >
             Learn React
           </a>
-        </header>
       </div>
     );
   }

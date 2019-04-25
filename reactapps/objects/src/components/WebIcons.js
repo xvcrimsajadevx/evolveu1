@@ -2,32 +2,28 @@ import React from 'react';
 
 const WebIcons = ({id, iconState, buttonClick}) => {
     return(
-      <div>
+      <div className="App-header">
         <i
-          className="fab fa-wolf-pack-battalion"
           id="wolf"
-          //value={ iconState.wolf }
+          className={`fab fa-wolf-pack-battalion ${( (iconState ==="wolf") ? "fabActive" : "" )}`}
           onClick={ buttonClick }
           >
         </i>
         <i
-          className="fab fa-phoenix-squadron"
           id="phoenix"
-          //value={ iconState.phoenix }
+          className={`fab fa-phoenix-squadron ${( (iconState==="phoenix") ? "fabActive" : "" )}`}
           onClick={ buttonClick }
           >
         </i>
         <i
-          className="fab fa-studiovinari"
           id="faerie"
-          //value={ iconState.faerie }
+          className={`fab fa-studiovinari ${( (iconState==="faerie") ? "fabActive" : "" )}`}
           onClick={ buttonClick }
           >
         </i>
         <i
-          className="fab fa-gitkraken"
           id="kraken"
-          //value={ iconState.kraken }
+          className={`fab fa-gitkraken ${( (iconState==="kraken") ? "fabActive" : "" )}`}
           onClick={ buttonClick }
           >
         </i>

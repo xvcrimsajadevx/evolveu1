@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { accounts } from './accountsData';
 import AccountsList from './AccountsList';
+import scripts from './scripts';
 import './accounts.css';
 
 class AccountsController extends Component {
@@ -22,32 +23,12 @@ class AccountsController extends Component {
   }
 
   render() {
-    const filteredAccounts = this.state.accounts.filter(accounts => {
-      return accounts.accountName.toLowerCase().includes(this.state.searchfield.toLowerCase());
-    })
+    const sortAccounts = scripts.sortAccounts;
+    const filteredAccounts = scripts.filteredAccounts;
 
-    const sortAccounts = (accounts) => {
-      let sortedAccounts = []
-
-      if (this.state.sorter === "low") {
-        sortedAccounts = accounts.sort(function(a, b){return a.accountBalance - b.accountBalance});
-      }
-      else if (this.state.sorter === "high") {
-        sortedAccounts = accounts.sort(function(a, b){return b.accountBalance - a.accountBalance});
-      }
-      else if (this.state.sorter === "alpha") {
-        sortedAccounts = accounts.sort(function(a, b){
-          var x = a.accountName.toLowerCase();
-          var y = b.accountName.toLowerCase();
-          if (x < y) {return -1;}
-          if (x > y) {return 1;}
-          return 0;})
-      }
-      else {
-        sortedAccounts = accounts;
-      }
-      return sortedAccounts;
-    }
+    const accounts = this.state.accounts;
+    const searchfield = this.state.searchfield;
+    const sorter = this.state.sorter;
 
     return(
       <div className="accountsController">
@@ -65,7 +46,7 @@ class AccountsController extends Component {
           placeholder="Search Accounts"
           onChange={this.onSearchChange}
         />
-        <AccountsList accounts= { sortAccounts(filteredAccounts) } />
+        <AccountsList accounts= { sortAccounts(sorter, filteredAccounts(accounts, searchfield)) } />
         <span className="accTotal">Total: ${accounts.reduce((accumulator, currentValue) => (accumulator + currentValue.accountBalance), 0)}</span>
       </div>
     );

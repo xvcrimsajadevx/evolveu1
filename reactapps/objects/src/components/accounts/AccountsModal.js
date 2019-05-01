@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import AccountCreator from './AccountCreator';
+import './accounts.css';
 
 
 class AccountsModal extends Component {
-  // constructor (props) {
-  //   super (props)
-  // }
-
   componentDidMount() {
     this.modalTarget = document.createElement('div');
     this.modalTarget.className = 'overlay';

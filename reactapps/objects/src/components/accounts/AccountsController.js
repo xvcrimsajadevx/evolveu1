@@ -15,8 +15,7 @@ class AccountsController extends Component {
       showModal: false,
       modalFunction: '',
     }
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleModal = this.handleModal.bind(this);
   }
 
   onSearchChange = (event) => {
@@ -27,12 +26,10 @@ class AccountsController extends Component {
     this.setState( { sorter: event.target.value } )
   }
 
-  handleOpenModal = (event) => {
+  handleModal = (event) => {
+    this.state.showModal ?
+    this.setState({ showModal: false, modalFunction: '' }) :
     this.setState({ showModal: true, modalFunction: event.target.id });
-  }
-
-  handleCloseModal = (event) => {
-    this.setState({ showModal: false, modalFunction: '' });
   }
 
   render() {
@@ -43,13 +40,12 @@ class AccountsController extends Component {
     const searchfield = this.state.searchfield;
     const sorter = this.state.sorter;
 
-    console.log(this.state.showModal);
-    console.log(this.state.modalFunction);
+    const modalFunction = this.state.modalFunction;
 
     return(
       <div className="accountsController" id='accController'>
         <h1>Your Accounts</h1>
-        <label className="addAccLabel"><button className="addAccButton" onClick={ this.handleOpenModal } id="addAccount">+</button>Add Account</label>
+        <label className="addAccLabel"><button className="addAccButton" onClick={ this.handleModal } id="addAccount">+</button>Add Account</label>
         <select className="accSort" id="sort" onChange={ this.onSortChange }>
           <option defaultValue >Sort</option>
           <option value="low">Low to High</option>
@@ -66,12 +62,9 @@ class AccountsController extends Component {
         <span className="accTotal">Total: ${accounts.reduce((accumulator, currentValue) => (accumulator + currentValue.accountBalance), 0)}</span>
 
         { this.state.showModal ? <AccountsModal
-          modalActive={this.state.showModal}
-          modalFunction={this.state.modalFunction}
-          modalOn={this.handleOpenModal}
-          modalOff={this.handleCloseModal}
+          modalFunction={modalFunction}
+          modalOff={this.handleModal}
         /> : "" }
-
       </div>
     );
   }

@@ -21,10 +21,10 @@ class AccountCreator extends Component {
                     <h2>Would you like to do:</h2>
 
                     <div>
-                        <input type = "radio" id= "Transfer" name = "transferDepositRadio" value="Transfer"/>
-                        <label htmlFor = "Transfer">Transfer</label>
-                        <input type = "radio" id= "Deposit" name = "transferDepositRadio" value="Deposit"/>
-                        <label htmlFor = "Transfer">Deposit</label>
+                        <label htmlFor = "Transfer"><input type = "radio" id= "Transfer" name = "transferDepositRadio" value="Transfer"/>
+                        Transfer</label>
+                        <label htmlFor = "Deposit"><input type = "radio" id= "Deposit" name = "transferDepositRadio" value="Deposit"/>
+                        Deposit</label>
                     </div>
                     <br/>
                     <button onClick={this.props.modal.modalOff}>Cancel</button>

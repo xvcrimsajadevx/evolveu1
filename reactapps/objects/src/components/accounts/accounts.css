@@ -86,8 +86,8 @@
 
 .modal {
   position: absolute;
-  top: 10%;
-  bottom: 6%;
+  top: 20%;
+  bottom: 16%;
   right: 3%;
   left: 3%;
   max-width: 480px;

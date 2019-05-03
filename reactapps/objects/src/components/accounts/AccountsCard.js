@@ -1,10 +1,14 @@
 import React from 'react';
 
-const AccountsCard = ({id, accountName, accountBalance}) => {
+const AccountsCard = ({accountId, accountName, accountBalance, toggleModal}  ) => {
   return(
-    <div className="accountsCard">
-      <span className="accName">{accountName}</span>
-      <span className="accBalance">${accountBalance}</span>
+    <div
+      className="accountsCard"
+      id="viewAccount"
+      onClick={ ((event) => toggleModal(event, accountId)) }
+    >
+      <span id="viewAccount" className="accName">{accountName}</span>
+      <span id="viewAccount" className="accBalance">${accountBalance}</span>
     </div>
   );
 }

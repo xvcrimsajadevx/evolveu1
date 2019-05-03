@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import AccountCreator from './AccountCreator';
+import AccountsManage from './AccountsManage';
 import './accounts.css';
 
 
@@ -22,9 +23,11 @@ class AccountsModal extends Component {
   }
 
   _render() {
+    //console.log("From Accounts Modal: ", this.props);
     ReactDOM.render(
       <div className='modal'>
         { (this.props.modalFunction === "addAccount") ? <AccountCreator modal={ this.props } /> : ''}
+        { (this.props.modalFunction === "viewAccount") ? <AccountsManage modal={ this.props } /> : ''}
       </div>,
       this.modalTarget
     );

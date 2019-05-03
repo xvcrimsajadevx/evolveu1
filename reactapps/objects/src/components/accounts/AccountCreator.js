@@ -4,8 +4,15 @@ class AccountCreator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      accountBalance: 0
+      accountBalance: 0,
+      selectedOption: '',
     };
+  }
+
+  handleOptionChange = (event) => {
+    this.setState({
+      selectedOption: event.target.value
+    });
   }
 
   render() {
@@ -18,18 +25,35 @@ class AccountCreator extends Component {
         <h2>Starting Balance: ${this.state.accountBalance}</h2>
 
         <div>
-          <h2>Would you like to:</h2>
-          <div>
-            <input type = "radio" id= "Transfer" name = "transferDepositRadio" value="Transfer"/>
-            <label htmlFor = "Transfer">Transfer</label>
-            <input type = "radio" id= "Deposit" name = "transferDepositRadio" value="Deposit"/>
-            <label htmlFor = "Deposit">Deposit</label>
-          </div>
+          <fieldset>
+            <legend>Would you like to:</legend>
+
+          <label htmlFor = "Transfer"><input
+            type = "radio"
+            id= "Transfer"
+            name = "transferDepositRadio"
+            value='transfer'
+            onChange={this.handleOptionChange}
+          />
+            Transfer</label>
+            <label htmlFor = "Deposit"><input
+              type = "radio"
+              id= "Deposit"
+              name = "transferDepositRadio"
+              value='deposit'
+              onChange={this.handleOptionChange}
+            />
+            Deposit</label>
+          <br />
+            { (this.state.selectedOption === 'deposit' ) ? <input type = "number"></input> : "" }
+            { (this.state.selectedOption === 'transfer' ) ? "Function not yet intruduced" : "" }
+          </fieldset>
+
           <br/>
           <button onClick={this.props.modal.modalOff}>Cancel</button>
           <button onClick= {this.props.onAccountsModelSubmit}>Submit</button>
           <br/>
-          <input type = "number"></input>
+
         </div>
       </div>
     );

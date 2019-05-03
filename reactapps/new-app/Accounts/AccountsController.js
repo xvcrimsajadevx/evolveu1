@@ -4,7 +4,6 @@ import AccountsList from './AccountsList';
 import scripts from './scripts';
 import './accounts.css';
 import AccountsModal from './AccountsModal';
-
 class AccountsController extends Component {
   constructor() {
     super()
@@ -13,10 +12,11 @@ class AccountsController extends Component {
       sorter: null,
       searchfield: '',
       showModal: false,
-      modalFunction: '',
       accountId: '',
+      modalFunction: ''
+
     }
-    this.handleModal = this.handleModal.bind(this);
+     this.handleModal = this.handleModal.bind(this);
   }
 
   onSearchChange = (event) => {
@@ -33,7 +33,11 @@ class AccountsController extends Component {
     this.setState({ showModal: true, modalFunction: event.target.id, accountId: accountId});
   }
 
+ 
+
+
   render() {
+
     const sortAccounts = scripts.sortAccounts;
     const filteredAccounts = scripts.filteredAccounts;
 
@@ -44,14 +48,13 @@ class AccountsController extends Component {
 
     const modalFunction = this.state.modalFunction;
 
-    // console.log(this.state.showModal);
-    // console.log(this.state.modalFunction);
-    // console.log(this.state.accountId);
+    console.log (this.handleModal);
 
     return(
-      <div className="accountsController" id='accController'>
+      <div className="accountsController" id = 'accController'>
+      
         <h1>Your Accounts</h1>
-        <label className="addAccLabel"><button className="addAccButton" onClick={ this.handleModal } id="addAccount">+</button>Add Account</label>
+        <label className="addAccLabel"><button className="addAccButton" id = "addAccount" onClick = {this.handleModal}>+</button>Add Account</label>
         <select className="accSort" id="sort" onChange={ this.onSortChange }>
           <option defaultValue >Sort</option>
           <option value="low">Low to High</option>
@@ -64,16 +67,22 @@ class AccountsController extends Component {
           placeholder="Search Accounts"
           onChange={this.onSearchChange}
         />
-        <AccountsList accounts= { sortAccounts(sorter, filteredAccounts(accounts, searchfield)) } toggleModal={ this.handleModal } />
+        <AccountsList 
+        accounts= { sortAccounts(sorter, filteredAccounts(accounts, searchfield)) } 
+        toggleModal ={this.handleModal} />
         <span className="accTotal">Total: ${accounts.reduce((accumulator, currentValue) => (accumulator + currentValue.accountBalance), 0)}</span>
-
-        { this.state.showModal ? <AccountsModal
-          accounts={ accounts }
-          accoundId={ accountId }
-          modalFunction={modalFunction}
-          modalOff={this.handleModal}
-        /> : "" }
+      
+     {this.state.showModal ? <AccountsModal
+     accounts = {accounts}
+     accountId = {accountId}
+     modalFunction = {modalFunction}
+     modalOff = {this.handleModal}
+     /> : ""}
+      
+       
       </div>
+      
+      
     );
   }
 }

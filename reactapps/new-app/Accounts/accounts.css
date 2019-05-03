@@ -2,9 +2,24 @@
   max-width: 480px;
   margin: auto;
   padding: 0px 16px;
-  color: #b6b9af;
-
+  color: black;
+  background-color: aliceblue;
 }
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
 .accountsList {
   border: 1px solid #474844;
   width: 100%;
@@ -22,11 +37,6 @@
   margin: 1px auto;
   padding: 8px 0px 10px;
   box-shadow: 2px 2px 3px #201f27;
-  user-select: none; /* supported by Chrome and Opera */
-   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Firefox */
-   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 .accountsCard:hover {
@@ -77,49 +87,23 @@
   float: right;
 }
 
-.overlay {
-  position: fixed; /* Sit on top of the page content */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  cursor: pointer; /* Add a pointer on hover */
-}
+/* model */
 
 .modal {
-  position: absolute;
-  top: 20%;
-  bottom: 16%;
-  right: 3%;
-  left: 3%;
-  max-width: 480px;
-  margin: auto;
-  border: 1px solid #474844;
-  background: #282c34;
+height: 420px;
+width: 500px;
+  position: fixed;
+  top: 130px;
+  left: 1075px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid rgb(252, 0, 0);
+  background: #ffffff;
   overflow: auto;
   border-radius: 4px;
   outline: none;
-  padding: 0px;
+  padding: 20px;
   display: block;
+
 }
 
-.modal h1 {
-  margin-top: 55px;
-  margin-bottom: 0px;
-}
-
-.modal fieldset {
-  width: 55%;
-  margin: auto;
-}
-
-.modal label {
-  margin: 0px 20px;
-}
-
-.modal button {
-  margin: 0px 5px;
-}

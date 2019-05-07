@@ -1,28 +1,52 @@
 import React, { Component } from 'react';
+import { accounts } from './accountsData';
+import Account from './Account';
+
+let accountId = 1;
 
 class AccountCreator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      accountBalance: 0,
+      accountName: "Account " + accountId,
       selectedOption: '',
     };
   }
 
   handleOptionChange = (event) => {
     this.setState({
-      selectedOption: event.target.value
+      accountName: event.target.value,
+      selectedOption: event.target.value,
     });
   }
 
+  createAccount = () => {
+    let accountName = this.state.accountName;
+    let initBalance = 0;
+
+    let account = new Account(accountId, accountName, initBalance);
+
+    accounts.push(account);
+    accountId++;
+    console.log(account);
+    console.log(accounts);
+    this.props.modal.modalOff()
+  }
+
   render() {
-    console.log ("Accounts creator", this.props.modal)
+    //console.log ("Accounts creator", this.props.modal)
+    //console.log ("Accounts creator", this.state.accountName)
+
+
+    console.log("accountId: ", accountId)
+
     return (
+
       <div>
         <h1>Create New Account</h1>
-        <span>Account Name: </span> <input></input>
+        <span>Account Name: </span> <input value={this.state.accountName} onChange={this.handleOptionChange}></input>
         <br/>
-        <h2>Starting Balance: ${this.state.accountBalance}</h2>
+        <h2>Starting Balance: $0</h2>
 
         <div>
           <fieldset>
@@ -51,7 +75,7 @@ class AccountCreator extends Component {
 
           <br/>
           <button onClick={this.props.modal.modalOff}>Cancel</button>
-          <button onClick= {this.props.onAccountsModelSubmit}>Submit</button>
+          <button onClick= {this.createAccount}>Submit</button>
           <br/>
 
         </div>

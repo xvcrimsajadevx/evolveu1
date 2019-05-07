@@ -5,6 +5,7 @@ const AccountsCard = ({accountId, accountName, accountBalance, toggleModal}  ) =
     <div
       className="accountsCard"
       id="viewAccount"
+      account={accountId}
       onClick={ ((event) => toggleModal(event, accountId)) }
     >
       <span id="viewAccount" className="accName">{accountName}</span>

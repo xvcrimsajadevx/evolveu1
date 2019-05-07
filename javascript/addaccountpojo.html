@@ -1,0 +1,35 @@
+<input type=text id='getName' /><button onClick='createAccount()'>submit</button>
+
+<script>
+    const accounts= [];
+    let accountId = 1;
+    let initialBalance = 0.00;
+    
+    function createAccount() {
+        let accountName = document.getElementById('getName').value;
+        
+        let account = new Account(accountId, accountName, initialBalance);
+        
+        accounts.push(account);
+        
+        console.log(accounts);
+        
+        accountId++;
+    };
+    
+    
+    class Account {
+        constructor (accountId, accountName, initBalance) {
+            this.accountId = accountId;
+            this.accountName = accountName;
+            this.balance = initBalance;
+        };
+        
+        deposit (a, b) {
+            return this.balance = math.sumAdd(a, b);
+        }
+        withdraw (a, b) {
+            return this.balance = math.sumSub(a, b);
+        }
+    }
+</script>

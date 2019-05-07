@@ -32,6 +32,9 @@ class AccountsController extends Component {
     this.setState({ showModal: true, modalFunction: event.target.id, accountId: accountId});
   }
 
+
+
+
   render() {
 
     const sortAccounts = scripts.sortAccounts;
@@ -78,7 +81,6 @@ class AccountsController extends Component {
      modalFunction = {modalFunction}
      modalOff = {this.handleModal}
      /> : ""}
-
 
       </div>
     );

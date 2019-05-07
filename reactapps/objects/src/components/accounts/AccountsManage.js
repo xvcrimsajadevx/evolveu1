@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Account from '../Account';
+import Account from './Account';
 
 class AccountsManage extends Component {
   constructor() {

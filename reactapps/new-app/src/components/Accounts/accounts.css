@@ -6,6 +6,8 @@
   background-color: aliceblue;
 }
 
+
+
 .accountsList {
   border: 1px solid #474844;
   width: 100%;
@@ -23,11 +25,6 @@
   margin: 1px auto;
   padding: 8px 0px 10px;
   box-shadow: 2px 2px 3px #201f27;
-  user-select: none; /* supported by Chrome and Opera */
-   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Firefox */
-   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 .accountsCard:hover {
@@ -79,30 +76,33 @@
 }
 
 #overlay {
-  position: fixed;
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  background-color: rgba(0,0,0,0.8); /* Black background with opacity */
   z-index: 70;
   cursor: pointer; /* Add a pointer on hover */
 }
 
+/* model */
+
 .modal {
-  position: absolute;
-  top: 16%;
-  bottom: 16%;
-  left: 30%;
-  right: 30%;
-  max-width: 480px;
-  margin: auto;
+height: 420px;
+width: 500px;
+  position: fixed;
+  top: 130px;
+  left: 475px;
+  right: 40px;
+  bottom: 40px;
   border: 1px solid rgb(252, 0, 0);
   background: #ffffff;
   overflow: auto;
   border-radius: 4px;
-  padding: 0px;
+  outline: none;
+  padding: 20px;
   display: block;
+  z-index: 75;
 }

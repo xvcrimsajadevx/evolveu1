@@ -28,6 +28,7 @@ class AccountsModal extends Component {
      <div className='modal'>
        { (this.props.modalFunction === "addAccount") ? <AccountCreator modal={ this.props } /> : ''}
        { (this.props.modalFunction === "viewAccount") ? <AccountsManage modal={ this.props } /> : ''}
+       
      </div>,
      this.modalTarget
    );

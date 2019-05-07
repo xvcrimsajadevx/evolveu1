@@ -1,14 +1,19 @@
 import React from 'react';
+import AccountsManage from './AccountsManage';
 
 const AccountsCard = ({accountId, accountName, accountBalance, toggleModal}) => {
   return(
-    <div
+    <div 
     className="accountsCard"
     id = "viewAccount"
     onClick = {((event) => toggleModal(event, accountId))}
     >
-      <span className="accName" id = "viewAccount">{accountName}</span>
-      <span className="accBalance" id = "viewAccount">${accountBalance}</span>
+      <span className="accName"
+      id = "viewAccount">{accountName}</span>
+      <span className="accBalance"
+      id = "viewAccount">${accountBalance}
+      </span>
+      
     </div>
   );
 }

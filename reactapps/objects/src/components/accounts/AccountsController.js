@@ -9,7 +9,6 @@ class AccountsController extends Component {
   constructor() {
     super()
     this.state = {
-      accounts: accounts,
       sorter: null,
       searchfield: '',
       showModal: false,
@@ -28,16 +27,16 @@ class AccountsController extends Component {
   }
 
   handleModal = (event, accountId) => {
+    //console.log(event.target)
     this.state.showModal ?
     this.setState({ showModal: false, modalFunction: '' }) :
-    this.setState({ showModal: true, modalFunction: event.target.id, accountId: accountId});
+    this.setState({ showModal: true, modalFunction: event.target.id, accountId: accountId})
   }
 
   render() {
     const sortAccounts = scripts.sortAccounts;
     const filteredAccounts = scripts.filteredAccounts;
 
-    const accounts = this.state.accounts;
     const accountId = this.state.accountId;
     const searchfield = this.state.searchfield;
     const sorter = this.state.sorter;
@@ -45,7 +44,7 @@ class AccountsController extends Component {
     const modalFunction = this.state.modalFunction;
 
     // console.log(this.state.showModal);
-    // console.log(this.state.modalFunction);
+    //console.log(this.state.modalFunction);
     // console.log(this.state.accountId);
 
     return(
@@ -69,9 +68,9 @@ class AccountsController extends Component {
 
         { this.state.showModal ? <AccountsModal
           accounts={ accounts }
-          accoundId={ accountId }
-          modalFunction={modalFunction}
-          modalOff={this.handleModal}
+          account={ accountId }
+          modalFunction={ modalFunction }
+          modalOff={ this.handleModal }
         /> : "" }
       </div>
     );

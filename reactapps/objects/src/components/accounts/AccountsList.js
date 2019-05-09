@@ -7,10 +7,10 @@ const AccountsList = ( {accounts, toggleModal}  ) => {
         { (accounts === undefined || accounts.length === 0) ? <h3>You have no accounts</h3> :
           accounts.map((account, i) => {
             return (<AccountsCard
-              key={accounts[i].id}
-              accountId={accounts[i].id}
-              accountName={ accounts[i].accountName }
-              accountBalance={ accounts[i].accountBalance }
+              key={account.id}
+              accountId={account.id}
+              accountName={ account.accountName }
+              accountBalance={ account.accountBalance }
               toggleModal={ toggleModal }
             />)
           })

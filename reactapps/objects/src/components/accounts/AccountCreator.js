@@ -13,9 +13,14 @@ class AccountCreator extends Component {
     };
   }
 
-  handleOptionChange = (event) => {
+  handleNameChange = (event) => {
     this.setState({
       accountName: event.target.value,
+    });
+  }
+
+  handleOptionChange = (event) => {
+    this.setState({
       selectedOption: event.target.value,
     });
   }
@@ -28,23 +33,15 @@ class AccountCreator extends Component {
 
     accounts.push(account);
     accountId++;
-    console.log(account);
-    console.log(accounts);
-    this.props.modal.modalOff()
+    //console.log(account);
+    //console.log(accounts);
   }
 
   render() {
-    //console.log ("Accounts creator", this.props.modal)
-    //console.log ("Accounts creator", this.state.accountName)
-
-
-    console.log("accountId: ", accountId)
-
     return (
-
       <div>
         <h1>Create New Account</h1>
-        <span>Account Name: </span> <input value={this.state.accountName} onChange={this.handleOptionChange}></input>
+        <span>Account Name: </span> <input value={this.state.accountName} onChange={this.handleNameChange}></input>
         <br/>
         <h2>Starting Balance: $0</h2>
 
@@ -75,7 +72,7 @@ class AccountCreator extends Component {
 
           <br/>
           <button onClick={this.props.modal.modalOff}>Cancel</button>
-          <button onClick= {this.createAccount}>Submit</button>
+          <button onClick= {(e) => {this.createAccount(); this.props.modal.modalOff(e)}}>Submit</button>
           <br/>
 
         </div>

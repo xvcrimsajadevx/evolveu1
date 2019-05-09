@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import Account from './Account';
 
 class AccountsManage extends Component {
   constructor() {
     super()
     this.state = {
-      account: new Account("Checking Account", 25),
       amount: 0,
       operator: "deposit",
     }
@@ -20,44 +18,47 @@ class AccountsManage extends Component {
     })
   }
 
-  buttonClick(e, account, amount, operator) {
-    let balance = account.balance;
+  buttonClick(account, amount, operator) {
+    let balance = account.accountBalance;
 
     if (operator === 'deposit') {
       balance = account.deposit(balance, amount);
 
-      this.setState({balance: balance, amount: 0})
+      this.setState({amount: 0})
     } else if (operator === 'withdraw') {
-      balance = account.withdraw(account.balance, amount);
+      balance = account.withdraw(balance, amount);
 
-      this.setState({balance: account.balance, amount: 0})
+      this.setState({amount: 0})
     }
   }
 
   render() {
-    let account = this.state.account;
+    let accountId = this.props.modal.account;
+    let accounts = this.props.modal.accounts;
+
+    let account = accounts.find(account => { return account.id === accountId } );
+
     let amount = this.state.amount;
     let operator = this.state.operator;
 
     return(
       <div>
-        <h1>{this.state.account.accountName}</h1>
-        <h3>Balance: ${this.state.account.balance}</h3>
+        <h1>{account.accountName}</h1>
+        <h3>Balance: ${account.accountBalance}</h3>
         <input
           onChange = {this.handleChange}
           value = {this.state.amount}
           type = "number"
           id = "amount"
-
         />
         <select id="operator" onChange = {this.handleChange}>
           <option value="deposit">Deposit</option>
           <option value="withdraw">Withdraw</option>
         </select>
         <br />
-        {console.log(this.props.modal)}
+
         <button onClick={ this.props.modal.modalOff }>Cancel</button>
-        <button onClick={ (e) => { this.buttonClick(e, account, amount, operator) } }>Submit</button>
+        <button onClick={ (e) => { this.buttonClick(account, amount, operator); this.props.modal.modalOff(e) } }>Submit</button>
       </div>
     );
   }

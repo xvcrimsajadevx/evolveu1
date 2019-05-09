@@ -8,11 +8,11 @@ class Account {
   };
 
   deposit (a, b) {
-    return this.balance = math.sumAdd(a, b);
+    return this.accountBalance = math.sumAdd(a, b);
   }
 
   withdraw (a, b) {
-    return this.balance = math.sumSub(a, b);
+    return this.accountBalance = math.sumSub(a, b);
   }
 }
 

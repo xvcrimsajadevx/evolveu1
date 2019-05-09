@@ -34,11 +34,11 @@ class AccountsController extends Component {
   }
 
   getHighest = () => {
-    alert("Highest Account is: ")
+    alert("Your highest account is: ")
   }
 
   getLowest = () => {
-    alert("Lowest Account is: ")
+    alert("Your lowest account is: ")
   }
   render() {
     const sortAccounts = scripts.sortAccounts;

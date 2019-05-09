@@ -30,6 +30,8 @@ class AccountsManage extends Component {
 
       this.setState({amount: 0})
     }
+
+    return balance;
   }
 
   deleteAccount(account, accounts) {

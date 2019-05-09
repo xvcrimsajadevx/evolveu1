@@ -33,13 +33,26 @@ class AccountsController extends Component {
     this.setState({ showModal: true, modalFunction: event.target.id, accountId: accountId})
   }
 
-  getHighest = () => {
-    alert("Your highest account is: ")
+  getHighest() {
+    if (accounts.length === 0 ) {
+      alert("You have no accounts")
+    } else {
+      let highestAccount = accounts.reduce(function (a, b) { return b.accountBalance < a.accountBalance ? a : b });
+      
+      alert("Your highest account is " + highestAccount.accountName + ". The balance is: $" + highestAccount.accountBalance);
+    }
   }
 
   getLowest = () => {
-    alert("Your lowest account is: ")
+    if (accounts.length === 0 ) {
+      alert("You have no accounts")
+    } else {
+      let lowestAccount = accounts.reduce(function (a, b) { return b.accountBalance > a.accountBalance ? a : b });
+
+      alert("Your lowest account is " + lowestAccount.accountName + ". The balance is: $" + lowestAccount.accountBalance);
+    }
   }
+
   render() {
     const sortAccounts = scripts.sortAccounts;
     const filteredAccounts = scripts.filteredAccounts;
@@ -70,7 +83,7 @@ class AccountsController extends Component {
         <span className="accTotal">Total: ${accounts.reduce((accumulator, currentValue) => (accumulator + currentValue.accountBalance), 0)}</span>
         <br />
 
-        <button onClick={this.getHighest}>Get Highest Account</button><button onClick={this.getLowest}>Get Lowest Account</button>
+        <button onClick={this.getHighest} >Get Highest Account</button> <button onClick={this.getLowest}>Get Lowest Account</button>
 
         { this.state.showModal ? <AccountsModal
           accounts={ accounts }

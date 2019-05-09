@@ -32,6 +32,14 @@ class AccountsManage extends Component {
     }
   }
 
+  deleteAccount(account, accounts) {
+    var index = accounts.indexOf(account);
+
+    if (index > -1) {
+      accounts.splice(index, 1);
+    }
+  }
+
   render() {
     let accountId = this.props.modal.account;
     let accounts = this.props.modal.accounts;
@@ -59,6 +67,8 @@ class AccountsManage extends Component {
 
         <button onClick={ this.props.modal.modalOff }>Cancel</button>
         <button onClick={ (e) => { this.buttonClick(account, amount, operator); this.props.modal.modalOff(e) } }>Submit</button>
+        <br />
+        <button onClick= { (e) => {this.deleteAccount(account, accounts); this.props.modal.modalOff(e)} }>Delete Account</button>
       </div>
     );
   }

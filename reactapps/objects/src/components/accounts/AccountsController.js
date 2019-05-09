@@ -33,6 +33,13 @@ class AccountsController extends Component {
     this.setState({ showModal: true, modalFunction: event.target.id, accountId: accountId})
   }
 
+  getHighest = () => {
+    alert("Highest Account is: ")
+  }
+
+  getLowest = () => {
+    alert("Lowest Account is: ")
+  }
   render() {
     const sortAccounts = scripts.sortAccounts;
     const filteredAccounts = scripts.filteredAccounts;
@@ -42,10 +49,6 @@ class AccountsController extends Component {
     const sorter = this.state.sorter;
 
     const modalFunction = this.state.modalFunction;
-
-    // console.log(this.state.showModal);
-    //console.log(this.state.modalFunction);
-    // console.log(this.state.accountId);
 
     return(
       <div className="accountsController" id='accController'>
@@ -65,6 +68,9 @@ class AccountsController extends Component {
         />
         <AccountsList accounts= { sortAccounts(sorter, filteredAccounts(accounts, searchfield)) } toggleModal={ this.handleModal } />
         <span className="accTotal">Total: ${accounts.reduce((accumulator, currentValue) => (accumulator + currentValue.accountBalance), 0)}</span>
+        <br />
+
+        <button onClick={this.getHighest}>Get Highest Account</button><button onClick={this.getLowest}>Get Lowest Account</button>
 
         { this.state.showModal ? <AccountsModal
           accounts={ accounts }

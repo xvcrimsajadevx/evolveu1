@@ -46,7 +46,7 @@ class AccountCreator extends Component {
         <h2>Starting Balance: $0</h2>
 
         <div>
-          <fieldset>
+          {/* <fieldset>
             <legend>Would you like to:</legend>
 
           <label htmlFor = "Transfer"><input
@@ -68,11 +68,12 @@ class AccountCreator extends Component {
           <br />
             { (this.state.selectedOption === 'deposit' ) ? <input type = "number"></input> : "" }
             { (this.state.selectedOption === 'transfer' ) ? "Function not yet intruduced" : "" }
-          </fieldset>
+          </fieldset> */}
 
           <br/>
           <button onClick={this.props.modal.modalOff}>Cancel</button>
           <button onClick= {(e) => {this.createAccount(); this.props.modal.modalOff(e)}}>Submit</button>
+
           <br/>
 
         </div>

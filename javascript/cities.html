@@ -1,0 +1,62 @@
+<script>
+    class City {
+        constructor (name, latitude, longitude, population) {
+            console.log(this);
+            this.name = name;
+            this.latitude = latitude;
+            this.longitude= longitude;
+            this.population = population;
+        }
+        show = () => {
+            console.log(`Name: ${this.name} Latitude: ${this.latitude} Longitude: ${this.longitude} Population: ${this.population}`)
+        }
+        moveIn = (growth) => {
+            this.population = this.population + growth;
+        }
+        moveOut = (decline) => {
+            this.population = this.population - decline;
+        }
+        howBig = () => {
+            if (this.population >= 100000) {
+                return `${this.name} is a city.`
+            } else if (this.population >= 20000 && this.population < 100000) {
+                return `${this.name} is a large town.`
+            } else if (this.population >= 1000 && this.population < 20000) {
+                return `${this.name} is a town.`
+            } else if (this.population > 100 && this.population < 1000) {
+                return `${this.name} is a village.`
+            } else if (this.population >= 1 && this.population <= 100) {
+                return `${this.name} is a hamlet.`
+            } else {
+                return `${this.name} is a ghost town. *cue tumbleweed*`
+            } 
+        }
+    }
+    
+    class Community {
+        constructor () {
+            
+        }
+        whichSphere = () => {
+            if (this.latitude > 0 ) {
+                return 'Northern Hemisphere';
+            } else if (this.latitude < 0 ) {
+                return 'Southern Hemisphere';
+            } else {
+                return 'On Equator';
+            }
+        }
+        
+        getMostNorth = () => {
+            let mostNorth = cities.reduce(function (a, b) { return b.latitude < a.latitude ? a : b });
+            return mostNorth.name;
+        }
+    }
+    
+    const cities = [
+        (new City('Calgary', 51.0486, -114.0708, 1336000)),
+        (new City('Sidney', -33.8688, 151.2093, 4627000)),
+    ]
+
+
+</script>

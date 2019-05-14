@@ -3,15 +3,15 @@ import math from './math';
 class Account {
   constructor (accName, initBalance) {
     this.accountName = accName;
-    this.balance = initBalance;
+    this.accountBalance = initBalance;
   };
 
   deposit (a, b) {
-    return this.balance = math.sumAdd(a, b);
+    return this.accountBalance = math.sumAdd(a, b);
   }
 
   withdraw (a, b) {
-    return this.balance = math.sumSub(a, b);
+    return this.accountBalance = math.sumSub(a, b);
   }
 }
 

@@ -13,7 +13,7 @@ class AccountsController extends Component {
       searchfield: '',
       showModal: false,
       modalFunction: '',
-      accountId: '',
+      //accountId: '',
     }
     this.handleModal = this.handleModal.bind(this);
   }
@@ -38,7 +38,7 @@ class AccountsController extends Component {
       alert("You have no accounts")
     } else {
       let highestAccount = accounts.reduce(function (a, b) { return b.accountBalance < a.accountBalance ? a : b });
-      
+
       alert("Your highest account is " + highestAccount.accountName + ". The balance is: $" + highestAccount.accountBalance);
     }
   }

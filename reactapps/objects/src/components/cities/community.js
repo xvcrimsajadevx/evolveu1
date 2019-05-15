@@ -6,23 +6,6 @@ class Community {
     this.cities = cities;
   }
 
-  createCity = (name, latitude, longitude, population) => {
-    let city = new City(name, latitude, longitude, population);
-    cities.push(city);
-
-    return cities;
-  }
-
-  deleteCity = (cities, city) => {
-    var index = cities.indexOf(city);
-
-    if ( index > -1 ) {
-      cities.splice(index, 1);
-    }
-
-    return cities;
-  }
-
   whichSphere = (city) => {
     if (city.latitude > 0 ) {
       return 'North';
@@ -33,7 +16,26 @@ class Community {
     }
   }
 
+  getMostNorth = () => {
+    
+  }
 
+  createCity = (name, latitude, longitude, population) => {
+    let city = new City(name, latitude, longitude, population);
+    cities.push(city);
+
+    return cities;
+  }
+
+  deleteCity = (city) => {
+    var index = cities.indexOf(city);
+
+    if ( index > -1 ) {
+      cities.splice(index, 1);
+  }
+
+    return cities;
+  }
 
 }
 

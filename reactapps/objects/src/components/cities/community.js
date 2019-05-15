@@ -17,7 +17,15 @@ class Community {
   }
 
   getMostNorth = () => {
-    
+    let mostNorthern = cities.reduce(function (a, b) { return a.latitude > b.latitude ? a : b });
+
+    return mostNorthern;
+  }
+
+  getMostSouth = () => {
+    let mostSouthern = cities.reduce(function (a, b) { return b.latitude > a.latitude ? a : b });
+
+    return mostSouthern;
   }
 
   createCity = (name, latitude, longitude, population) => {

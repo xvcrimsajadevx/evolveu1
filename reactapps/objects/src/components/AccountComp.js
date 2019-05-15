@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Account from './Account';
 
+let account = new Account("Checking Account", 25)
+
 class AccountComp extends Component {
   constructor() {
     super()
     this.state = {
-      account: new Account("Checking Account", 25),
       amount: 0,
       operator: "deposit",
     }
@@ -21,28 +22,23 @@ class AccountComp extends Component {
   }
 
   buttonClick(e, account, amount, operator) {
-    let balance = account.balance;
-
     if (operator === 'deposit') {
-      balance = account.deposit(balance, amount);
-
-      this.setState({balance: balance, amount: 0})
+      account.accountBalance = account.deposit(account.accountBalance, amount);
     } else if (operator === 'withdraw') {
-      balance = account.withdraw(account.balance, amount);
-
-      this.setState({balance: account.balance, amount: 0})
+      account.accountBalance = account.withdraw(account.accountBalance, amount);
     }
+
+    this.setState({amount: 0})
   }
 
   render() {
-    let account = this.state.account;
     let amount = this.state.amount;
     let operator = this.state.operator;
 
     return(
       <div>
-        <h1>{this.state.account.accountName}</h1>
-        <h3>Balance: ${this.state.account.balance}</h3>
+        <h1>{account.accountName}</h1>
+        <h3>Balance: ${account.accountBalance}</h3>
         <input
           onChange = {this.handleChange}
           value = {this.state.amount}

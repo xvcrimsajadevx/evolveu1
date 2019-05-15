@@ -72,10 +72,10 @@ test('Test whichSphere() method, which returns whether a city is in the Northern
 
 test('Test getMostNorth() method, which loops through cities and returns the city with the highest (most North) latitude', () => {
   //More cities added for better coverage
-  community.createCity('Calgary', -25, 103, 2560);
-  community.createCity('Sudbury', 0, 70, 250);
-  community.createCity('Sidney', 90, 103, 2560);
-  community.createCity('The Ether', -67, 70, 250);
+  community.createCity('Calgary', -25, -53, 67590);
+  community.createCity('Sudbury', 0, 5, 250);
+  community.createCity('Sidney', 90, 87, 195630);
+  community.createCity('The Ether', -67, 20, 75);
 
   let expected = cities.reduce(function (a, b) { return b.latitude < a.latitude ? a : b });
 
@@ -87,3 +87,31 @@ test('Test getMostSouth() method, which loops through cities and returns the cit
 
   expect(community.getMostSouth()).toBe(expected);
 });
+
+test('Test getPopulation() method, which totals the number of all population in cities', () => {
+  let expected = cities.reduce((accumulator, currentValue) => (accumulator + currentValue.population), 0);
+
+  console.log('Expected Total Population:', expected);
+
+  expect(community.getPopulation()).toBe(266105);
+})
+
+test('Test getPopulation() method after adding a new city', () => {
+  community.createCity('Roads', 49, 78, 1195630);
+
+  let expected = cities.reduce((accumulator, currentValue) => (accumulator + currentValue.population), 0);
+
+  console.log('After Adding City:', expected);
+
+  expect(community.getPopulation()).toBe(1461735);
+})
+
+test('Test getPopulation() method after deleting a city', () => {
+  community.deleteCity(cities[2])
+
+  let expected = cities.reduce((accumulator, currentValue) => (accumulator + currentValue.population), 0);
+
+  console.log('After Deleting City:', expected);
+
+  expect(community.getPopulation()).toBe(1461485);
+})

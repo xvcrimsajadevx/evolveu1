@@ -28,14 +28,14 @@ class Community {
     return mostSouthern;
   }
 
-  getPopulation = () => {
+  getPopulation = (cities) => {
     let totalPopulation = cities.reduce((accumulator, currentValue) => (accumulator + currentValue.population), 0);
 
     return totalPopulation;
   }
 
-  createCity = (name, latitude, longitude, population) => {
-    let city = new City(name, latitude, longitude, population);
+  createCity = (name, latitude, longitude, population, cityID) => {
+    let city = new City(name, latitude, longitude, population, cityID);
     cities.push(city);
 
     return cities;

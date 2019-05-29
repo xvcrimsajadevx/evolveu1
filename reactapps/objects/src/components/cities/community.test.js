@@ -93,7 +93,7 @@ test('Test getPopulation() method, which totals the number of all population in 
 
   console.log('Expected Total Population:', expected);
 
-  expect(community.getPopulation()).toBe(266105);
+  expect(community.getPopulation(cities)).toBe(266105);
 })
 
 test('Test getPopulation() method after adding a new city', () => {
@@ -103,7 +103,7 @@ test('Test getPopulation() method after adding a new city', () => {
 
   console.log('After Adding City:', expected);
 
-  expect(community.getPopulation()).toBe(1461735);
+  expect(community.getPopulation(cities)).toBe(1461735);
 })
 
 test('Test getPopulation() method after deleting a city', () => {
@@ -113,5 +113,5 @@ test('Test getPopulation() method after deleting a city', () => {
 
   console.log('After Deleting City:', expected);
 
-  expect(community.getPopulation()).toBe(1461485);
+  expect(community.getPopulation(cities)).toBe(1461485);
 })

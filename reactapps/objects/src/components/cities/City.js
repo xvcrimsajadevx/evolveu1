@@ -1,9 +1,10 @@
 export default class City {
-  constructor(name, latitude, longitude, population) {
+  constructor(name, latitude, longitude, population, cityID) {
     this.name = name;
     this.latitude = latitude;
     this.longitude= longitude;
     this.population = population;
+    this.cityID = cityID
   }
 
   show = () => {
@@ -11,26 +12,26 @@ export default class City {
   }
 
   moveIn = (people) => {
-    return this.population = this.population + people;
+    return this.population = Number(this.population) + Number(people);
   }
 
   moveOut = (people) => {
-    return this.population = this.population - people;
+    return this.population = Number(this.population) - Number(people);
   }
 
   howBig = () => {
     if (this.population >= 100000) {
-      return `${this.name} is a city.`;
+      return "City";
     } else if (this.population >= 20000 && this.population < 100000) {
-      return `${this.name} is a large town.`;
+      return "Large Town";
     } else if (this.population >= 1000 && this.population < 20000) {
-      return `${this.name} is a town.`;
+      return "Town";
     } else if (this.population > 100 && this.population < 1000) {
-      return `${this.name} is a village.`;
-    } else if (this.population > 1 && this.population <= 100) {
-      return `${this.name} is a hamlet.`;
+      return "Village";
+    } else if (this.population >= 1 && this.population <= 100) {
+      return "Hamlet";
     } else if (this.population === 0) {
-      return `${this.name} is a ghost town.`;
+      return "Ghost Town";
     } else {
       return "";
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import CityDisplay from './CityDisplay';
+import AddCity from './AddCity';
 import './cities.css';
 
 
@@ -24,11 +25,19 @@ class CitiesModal extends Component {
   _render() {
     ReactDOM.render(
       <div className='citiesModal'>
+      { (this.props.modalFunction === "displayCity") ?
         <CityDisplay
           community = {this.props.community}
           cityID = {this.props.cityID}
           setModal = {this.props.setModal}
-        />
+        /> : ""
+      }
+      { (this.props.modalFunction === "addCity") ?
+        <AddCity
+          setModal = {this.props.setModal}
+          community = {this.props.community}
+        /> : ""
+      }
       </div>,
       this.modalTarget
     );

@@ -28,19 +28,25 @@ class CitiesComp extends Component {
   }
 
   handleModal = (event, cityID) => {
-    // console.log(event.target)
-    this.state.showModal ?
-    this.setState({ showModal: false, modalFunction: '', cityID: '' }) :
-    this.setState({ showModal: true, modalFunction: event.target.parentNode.id, cityID: cityID })
+    if ( this.state.showModal === false ) {
+      if ( event.target.parentNode.id === 'displayCity' ) {
+        this.setState({ showModal: true, modalFunction: event.target.parentNode.id, cityID: cityID })
+      } else {
+        this.setState({ showModal: true, modalFunction: event.target.id, cityID: "" })
+      }
+    } else {
+      this.setState({ showModal: false, modalFunction: '', cityID: '' })
+    }
   }
 
   render() {
     const cityID = this.state.cityID;
+    const modalFunction = this.state.modalFunction;
 
     return(
       <div className='citiesBody' id='citiesBody'>
         <h1>Communities</h1>
-        <label className="addCityLabel"><button className="addCityButton" id="addCity">+</button>Add City</label>
+        <label className="addCityLabel"><button onClick={this.handleModal} className="addCityButton" id="addCity">+</button>Add City</label>
         <CitiesList
           community = {community}
           setModal = {this.handleModal}
@@ -55,7 +61,7 @@ class CitiesComp extends Component {
         { this.state.showModal ? <CitiesModal
           community = {community}
           cityID = { cityID }
-          // modalFunction={ modalFunction }
+          modalFunction={ modalFunction }
           setModal = { this.handleModal }
         /> : "" }
       </div>

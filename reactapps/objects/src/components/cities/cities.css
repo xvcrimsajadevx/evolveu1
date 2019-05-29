@@ -144,3 +144,21 @@
   margin: 16px auto 3px;
   text-align: center;
 }
+
+.addCity {
+  display: block;
+  width: 70%;
+  margin: auto;
+}
+
+.addCity h1 {
+  display: block;
+}
+
+.addCity label {
+  display: inline-block;
+  width: 30%;
+}
+.addCity input, .addCity select {
+  
+}

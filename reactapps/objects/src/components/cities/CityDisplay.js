@@ -42,13 +42,7 @@ class CityDisplay extends Component {
   }
 
   deleteCity(community, city) {
-    console.log(city);
-
-    var index = community.cities.indexOf(city);
-
-    if (index > -1) {
-      community.cities.splice(index, 1);
-    }
+    community.deleteCity(city)
   }
 
   render () {
@@ -103,7 +97,7 @@ class CityDisplay extends Component {
                 <option value="moveOut">moved out</option>
               </select>
             </span>
-            <button className='updateCity' onClick={() => this.updatePop(city, popAmount, operator)}>Update City</button>
+            <button className='updateCity' onClick={() => {this.updatePop(city, popAmount, operator); setModal()}}>Update City</button>
         </fieldset>
         <button className='updateCity' onClick={() => {this.deleteCity(community, city); setModal()}}>Delete City</button>
       </div>

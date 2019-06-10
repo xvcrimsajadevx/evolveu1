@@ -27,6 +27,12 @@ const WebIcons = ({id, iconState, buttonClick}) => {
           onClick={ buttonClick }
           >
         </i>
+        <i
+          id="dragon"
+          className={`fab fa-d-and-d ${( (iconState==="dragon") ? "fabActive" : "" )}`}
+          onClick={ buttonClick }
+          >
+        </i>
         <br />
 
       </div>

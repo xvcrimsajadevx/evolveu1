@@ -11,7 +11,7 @@ class AddCity extends Component {
       cityLong: 0,
       latSphere: 'north',
       longSphere: 'east',
-      cityPop: 0,
+      cityPop: 0
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -34,6 +34,12 @@ class AddCity extends Component {
 
     cityID = cityID + 1;
   }
+
+  // getRandomInt(min, max) {
+  //   min = Math.ceil(min);
+  //   max = Math.floor(max);
+  //   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+  // }
 
   render () {
     let setModal = this.props.setModal;

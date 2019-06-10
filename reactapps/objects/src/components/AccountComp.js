@@ -11,6 +11,7 @@ class AccountComp extends Component {
       operator: "deposit",
     }
     this.handleChange = this.handleChange.bind(this);
+    this.buttonClick = this.buttonClick.bind(this);
   }
 
   handleChange(event) {
@@ -21,7 +22,7 @@ class AccountComp extends Component {
     })
   }
 
-  buttonClick(e, account, amount, operator) {
+  buttonClick(account, amount, operator) {
     if (operator === 'deposit') {
       account.accountBalance = account.deposit(account.accountBalance, amount);
     } else if (operator === 'withdraw') {
@@ -34,6 +35,7 @@ class AccountComp extends Component {
   render() {
     let amount = this.state.amount;
     let operator = this.state.operator;
+    let buttonClick = this.buttonClick
 
     return(
       <div>
@@ -44,14 +46,13 @@ class AccountComp extends Component {
           value = {this.state.amount}
           type = "number"
           id = "amount"
-
         />
         <select id="operator" onChange = {this.handleChange}>
           <option value="deposit">Deposit</option>
           <option value="withdraw">Withdraw</option>
         </select>
         <br />
-        <button onClick={ (e) => { this.buttonClick(e, account, amount, operator) } }>Submit</button>
+        <button onClick={ () => { buttonClick(account, amount, operator) } } >Submit</button>
       </div>
     );
   }

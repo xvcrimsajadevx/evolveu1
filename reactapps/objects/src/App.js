@@ -3,7 +3,8 @@ import WebIcons from './components/WebIcons';
 import MathComp from './components/MathComp';
 import AccountComp from './components/AccountComp';
 import AccountsController from './components/accounts/AccountsController';
-import CitiesComp from './components/cities/CitiesComp'
+import CitiesComp from './components/cities/CitiesComp';
+import LinkedListComp from './components/LinkedListComp';
 import logo from './logo.svg';
 import './App.css';
 
@@ -36,6 +37,7 @@ class App extends Component {
           { (this.state.id === 'phoenix') ? <AccountComp /> : "" }
           { (this.state.id === 'faerie') ? <AccountsController /> : "" }
           { (this.state.id === 'kraken') ? <CitiesComp /> : "" }
+          { (this.state.id === 'dragon') ? <LinkedListComp /> : "" }
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>

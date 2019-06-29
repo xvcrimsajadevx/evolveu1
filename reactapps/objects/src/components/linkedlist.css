@@ -1,0 +1,97 @@
+i.active {
+  display: inline-block;
+  width: 20px;
+  padding: 4px 4px;
+  margin: 0px 1px;
+  border: 1px solid #363b44;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #201f27;
+}
+
+i.inactive {
+  display: inline-block;
+  width: 20px;
+  padding: 4px 4px;
+  margin: 0px 4px;
+  color: #31353e;
+}
+
+.offStep:hover, .onStep:hover, .active:hover,
+.offStep, .onStep, .active, .inactive {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+   by Chrome and Opera */
+}
+
+.offStep, .onStep {
+  display: inline-block;
+  margin: 0px 1px;
+  border: 1px solid #363b44;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #201f27;
+  -webkit-transition: background-color .8s;
+}
+.offStep {
+  position: relative;
+  padding: 2px 8px 4px;
+  top: 6px;
+}
+
+.offStep:hover, .active:hover {
+  background-color: #434750;
+}
+
+.onStep {
+  font-size: 24px;
+  padding: 0px 12px 2px;
+}
+
+.placeholder {
+  display: inline-block;
+  width: 5px
+}
+
+.listDirection {
+  float: right;
+  font-size: 10px;
+  font-size: 10;
+  font-display: underline;
+}
+
+.listDirection H6 {
+  margin: 0px;
+  font-size: 12px;
+  padding: 0px;
+}
+
+.fa-angle-left {
+  float:left;
+  font-size: 30px;
+  margin-right: 5px
+}
+
+.fa-angle-right {
+  float:right;
+  font-size: 30px;
+  margin-left: 5px
+}
+
+.onStep span {
+  display: block;
+  margin: 0px;
+}
+
+hr {
+  width: 90%;
+  max-width: 450px
+}
+
+li {
+  list-style-position: inside;
+  float:none;
+  margin: auto;
+}

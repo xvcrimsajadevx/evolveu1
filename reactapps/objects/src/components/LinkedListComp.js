@@ -38,8 +38,8 @@ class LinkedListComp extends Component {
     })
 
     newList.current === null ?
-    this.setState({next: null}) :
-    this.setState({next: newList.current.forwardNode})
+    this.setState({ next: null }) :
+    this.setState({ next: newList.current.forwardNode })
   }
 
   addNode = () => {
@@ -93,9 +93,7 @@ class LinkedListComp extends Component {
   }
 
   listItem = (item, itemKey) => {
-    const listNode = <li key={itemKey}>{item.show()}</li>;
-    //itemKey = itemKey + 1;
-
+    const listNode = <li key={ itemKey }>{ item.show() }</li>;
     return listNode;
   }
 
@@ -107,7 +105,7 @@ class LinkedListComp extends Component {
   }
 
   textChange = (event) => {
-    const {id, value} = event.target
+    const { id, value } = event.target
 
     this.setState({
       [id]: value
@@ -136,7 +134,7 @@ class LinkedListComp extends Component {
         { (current === null) ? <div>You have no nodes</div> :
         <div className='onStep'>
           <span>{ current.show() }</span>
-          <button onClick={() => {this.deleteNode()}}>Delete Node</button>
+          <button onClick={ () => {this.deleteNode()} }>Delete Node</button>
         </div> }
 
         { (next === null || next === undefined) ? "":
@@ -150,23 +148,23 @@ class LinkedListComp extends Component {
 
         <br />
 
-        <button onClick={() => {this.addNode()}}>Add Node</button>
+        <button onClick={ () => {this.addNode()} }>Add Node</button>
 
         <br />
-        <span>Total: {newList.total()}</span>
+        <span>Total: { newList.total() }</span>
 
         <hr />
         <h3>LIFO/FIFO</h3>
 
-        <input type='text' id='listItem' onChange={this.textChange} value={this.state.listItem}/>
-        <button onClick={() => this.addItem() }>Add Item</button><br />
+        <input type='text' id='listItem' onChange={ this.textChange } value={ this.state.listItem }/>
+        <button onClick={ () => this.addItem() }>Add Item</button><br />
         <span>Queue List:</span>
         { listQueue.queue.length === 0 ? <ul><li>You do not have any items in your queue</li></ul> :
           <ol>
-            {listQueue.queue.map(this.listItem)}
+            { listQueue.queue.map(this.listItem) }
           </ol>
         }
-        <button onClick={() => this.lifo() }>LIFO</button> | <button onClick={() => this.fifo() }>FIFO</button>
+        <button onClick={ () => this.lifo() }>LIFO</button> | <button onClick={ () => this.fifo() }>FIFO</button>
       </div>
     )
   }

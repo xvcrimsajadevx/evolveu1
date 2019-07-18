@@ -27,15 +27,32 @@ bool3 = (3 > 9) #should return False
 
 print(bool1, bool2, bool3)
 
-# Lists - Ordered sequence of items, can be mixed types
+# Lists - Ordered sequence of items, can be mixed types - similar to an Array
 list1 = [1,2,3]
 list2 = [45, 'apple', True, 5.72]
 
 print(list1, list2)
 
 # Lists can also contain other Lists
-megalist = [list1, list2]
+megalist = [list1, list2, bool2, str2]
 
 print(megalist)
 
-# Dictionaries - 
+# Dictionaries - Unordered mappings for storing objects without knowing the index using key/value pairs - Similar to an Object
+
+dict1 = {'name1':'Kiado', 'name2':'Rickard', 'name3':'Frenniz'}
+
+print(dict1)
+print(dict1['name2'])
+
+# Dictionaries can contain lists, or other Dictionaries
+
+dict2 = {'dictionary':dict1, 'list':list1}
+
+print(dict2)
+
+# Lists can also contain Dictionaries
+
+list4 = [dict1, list1, bool3]
+
+print(list4)

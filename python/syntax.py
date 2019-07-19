@@ -15,7 +15,7 @@ print(float1, float2, float3)
 
 # Strings - Ordered sequence of characters,
 str1 = 'This is a string' # Indicated by single quotes ('')
-str2 = "8736457" # or double quotes ("")
+str2 = "8736457 is a string" # or double quotes ("")
 str3 = "'This is also a string'" # <-- In this sequence, the inner single quotes ('') are part of the string
 
 print(str1, str2, str3)
@@ -60,8 +60,7 @@ no_def = None
 print(no_def)
 
 # Tuples - Similar to lists (ordered sequence), but the objects inside are immutable (cannot be reassigned)
-# Tuples use paranthases
-
+# Tuples use parentheses
 tup1 = (3,5,7)
 tup2 = ('f', 'k', 'c')
 
@@ -86,3 +85,71 @@ objlist = [3,5,6,3,7,3,6,7,6,3]
 print(set(objlist))
 
 ## - Sample If/Elif/Else - ##
+num1 = 7
+num2 = 5
+
+if num1 == num2:
+    print('num1 is equal to num2')
+elif num1 > num2:
+    print('num1 is greater that num2')
+else:
+    print('num1 is less than num2')
+
+num1 = 3
+num2 = 8
+
+if num1 == num2:
+    print('num1 is equal to num2')
+elif num1 > num2:
+    print('num1 is greater that num2')
+else:
+    print('num1 is less than num2')
+
+num1 = 3
+num2 = 3
+
+if num1 == num2:
+    print('num1 is equal to num2')
+elif num1 > num2:
+    print('num1 is greater that num2')
+else:
+    print('num1 is less than num2')
+
+## - For Loops - ##
+seq = [4,2,6,9,7,5]
+
+# For Loop with Numbers
+for num in seq:
+    total = num**2
+    print("{} ^ 2 = {}".format(num, total))
+
+characters = ['Kiado', 'Rickard', 'Frenniz']
+
+#For Loop with Strings
+for char in characters:
+    print(char)
+
+# For Loop with Dictionaries
+races = {'Vahirga' : 'Obsidian Elf', 'Alixia' : 'Winged Elf', 'Edwin' : 'Human'}
+
+for character in races:
+    race = races[character]
+    isVowel = False
+    for vowel in 'aeiou':
+        if race[0].lower() == vowel:
+            isVowel = True
+
+    if isVowel == True:
+        print('{} is an {}'.format(character, race))
+    else:
+        print('{} is a {}'.format(character, race))
+
+
+## - While Loops - ##
+i = 1
+
+while i < 20: # <--- MAKE SURE TO CREATE A CONDITION THAT CAN/WILL BE MET!!! Otherwise the fuction will carry on infinitely
+    print(f"i is currently: {i}")
+    i = i+i # <--- i = i + i is not the same! Will create an infinite loop. Close the spaces between items or wrap in parentheses
+
+## - funtions - Parameters and Returns - ##

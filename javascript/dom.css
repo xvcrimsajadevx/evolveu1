@@ -13,6 +13,8 @@ hr
 button {
     margin: 1px;
     width: 100px;
+    border-radius: 2px;
+    background-color: #c1c1a9;
 }
 
 .cardsBody {
@@ -23,23 +25,41 @@ button {
 .leftPanel {
     display: inline-block;
     width: 280px;
-    border: 1px solid black;
+    border: 1px solid #b1b184;
+    border-radius: 4px;
     text-align: center;
-    background-color: white;
+    background-color: #c1c1a9;
     padding: 5px 0px;
 }
 
 .rightPanel {
-    display: inline;
-    border: 1px solid black;
+    display: inline-block;
+    background-color: #dadac1;
+    border-top: 1px solid #adad9c;
+    border-left: 1px solid #adad9c;
+    border-radius: 20px;
+    box-shadow: 5px 7px 5px #656552;
+    position: absolute;
+    left: 300px;
+    width: 70%;
+    height: 85%;
+    margin: auto;
 }
 
+.rightPanel h2, .rightPanel p{
+  margin: 20px 30px;
+  color: #696950;
+}
 
 .card {
     width: 260;
-    background-color: lightgray;
+    background-color: #efefe1;
     margin: 3px auto;
     padding: 20px 0px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 3px #656552;
+    border-top: 1px solid #a5a58a;
+    border-left: 1px solid #a5a58a;
 }
 
 ol {

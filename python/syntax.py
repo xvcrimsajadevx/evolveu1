@@ -1,4 +1,4 @@
-## Attributes/Variables
+## - Attributes/Variables ##
 # Intergers - Whole Numbers
 int1 = 2
 int2 = -36
@@ -39,20 +39,50 @@ megalist = [list1, list2, bool2, str2]
 print(megalist)
 
 # Dictionaries - Unordered mappings for storing objects without knowing the index using key/value pairs - Similar to an Object
-
 dict1 = {'name1':'Kiado', 'name2':'Rickard', 'name3':'Frenniz'}
 
 print(dict1)
-print(dict1['name2'])
+print(dict1['name3'], dict1['name1'], dict1['name2'])
 
 # Dictionaries can contain lists, or other Dictionaries
-
 dict2 = {'dictionary':dict1, 'list':list1}
 
 print(dict2)
 
 # Lists can also contain Dictionaries
-
 list4 = [dict1, list1, bool3]
 
 print(list4)
+
+# There are no 'undefined' variables in Python. You can, however, set them to None
+no_def = None
+
+print(no_def)
+
+# Tuples - Similar to lists (ordered sequence), but the objects inside are immutable (cannot be reassigned)
+# Tuples use paranthases
+
+tup1 = (3,5,7)
+tup2 = ('f', 'k', 'c')
+
+print(tup1, tup2)
+print(tup1[2], tup2[0])
+
+# Tuples can also contain Lists, Dictionaries, and other tuples.
+tup3 = (list1, tup2, dict1)
+
+print(tup3)
+
+# Likewise, Lists and Dictionaries can contain Tuples
+list5 = [tup1, tup2]
+dict5 = {'tuple1': tup1, 'tuple2': tup2}
+
+print(list5)
+print(dict5)
+
+#Sets - unordered collections of unique elements
+objlist = [3,5,6,3,7,3,6,7,6,3]
+
+print(set(objlist))
+
+## - Sample If/Elif/Else - ##

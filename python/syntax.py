@@ -166,6 +166,8 @@ for character in races:
 
     if isVowel == True:
         print('{} is an {}'.format(character, race))
+    elif race.lower() == 'human':
+        print('{} is {}'.format(character, race))
     else:
         print('{} is a {}'.format(character, race))
 
@@ -177,5 +179,54 @@ i = 1
 while i < 20: # <--- MAKE SURE TO CREATE A CONDITION THAT CAN/WILL BE MET!!! Otherwise the fuction will carry on infinitely
     print(f"i is currently: {i}")
     i = i+i # <--- i = i + i is not the same! Will create an infinite loop. Close the spaces between items or wrap in parentheses
+print(" ")
 
-## - funtions - Parameters and Returns - ##
+print('## - funtions - Parameters and Returns - ##')
+def greet_person(name='user'):
+    print('Hello '+name+'!')
+
+greet_person()
+greet_person('Crim')
+greet_person('Rickard')
+greet_person('Kiado')
+
+print(" ")
+def add_num(num1,num2):
+    return num1+num2
+
+sum1 = add_num(5,7)
+print('5 + 7 = {}'.format(sum1))
+sum2 = add_num(11,4)
+print('11 + 4 = {}'.format(sum2))
+total = add_num(sum1,sum2)
+print('{} + {} = {}'.format(sum1,sum2,total))
+
+print(" ")
+
+print('## Lists - Insert/Append')
+print('# Append adds to the end of the list')
+
+myList = ['a','b','c']
+print(myList)
+
+myList.append(1)
+print(myList)
+myList.append(2)
+print(myList)
+myList.append(3)
+print(myList)
+
+print(" ")
+
+print('# Insert is used to insert an item at a specific Index number')
+print('# Index 0 will insert at the beginning of the list')
+
+myList = ['a','b','c']
+print(myList)
+
+myList.insert(0,4)
+print(myList)
+myList.insert(0,5)
+print(myList)
+myList.insert(0,6)
+print(myList)

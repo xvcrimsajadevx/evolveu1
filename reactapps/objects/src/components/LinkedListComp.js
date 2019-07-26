@@ -78,7 +78,7 @@ class LinkedListComp extends Component {
         refreshState();
       }, timer, queueOrder, refreshState);
 
-      timer = timer + 300;
+      timer = timer + 1000;
     };
   }
 
